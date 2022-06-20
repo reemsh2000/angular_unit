@@ -1,0 +1,60 @@
+<!-- Form to add more details about items order  -->
+<div class="modal_container">
+  <mat-icon
+    class="close_icon"
+    aria-hidden="false"
+    aria-label="close icon"
+    (click)="close()"
+  >
+    close
+  </mat-icon>
+  <form
+    action=""
+    class="add_work_form"
+    (ngSubmit)="submitForm(itemForm.value)"
+    #itemForm="ngForm"
+  >
+    <h3 class="modal_title">Add Item to work</h3>
+    <div class="form_inputs">
+      <div class="input">
+        <label>Description</label>
+        <textarea
+          placeholder="Operation description"
+          name="description"
+          #decriptionModal="ngModel"
+          [(ngModel)]="modal.description"
+          [disabled]="user === 'forman'"
+        ></textarea>
+      </div>
+      <div class="input">
+        <label>location</label>
+        <select
+          name="location"
+          #locationModal="ngModel"
+          [(ngModel)]="modal.location"
+          [disabled]="user === 'forman'"
+        >
+          <option value="location1">location 1</option>
+          <option value="location2">location 2</option>
+          <option value="location3">location 3</option>
+          <option value="location4">location 4</option>
+        </select>
+      </div>
+      <div class="input">
+        <label>Progress</label>
+        <input
+          type="number"
+          name="progress"
+          #progressModal="ngModel"
+          [(ngModel)]="modal.progress"
+        />
+      </div>
+
+      <div class="btns">
+        <button class="btn btn_cancel" (click)="close()">Cancel</button>
+        <button type="submit" class="btn btn_save">Save</button>
+      </div>
+    </div>
+    <p *ngIf="showErrorMsg" class="error">You should Fill out all fields</p>
+  </form>
+</div>

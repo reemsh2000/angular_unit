@@ -1,0 +1,39 @@
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 97%;
+  border: 2px solid rgb(205, 205, 205);
+  margin: auto;
+  text-align: center;
+}
+
+td,
+th {
+  height: 20px;
+  padding: 10px;
+}
+
+.order_title {
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+
+.table_head_col {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid rgb(205, 205, 205);
+  color: #343a3f;
+  font-size: 13px;
+}
+
+.btn {
+  width: 60px;
+  padding: 5px;
+  background-color: rgba(255, 0, 0, 0.935);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  align-self: center;
+  margin-left: 15px;
+}

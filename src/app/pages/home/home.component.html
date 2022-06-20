@@ -1,0 +1,35 @@
+<div class="work_orders">
+  <div class="container">
+    <h2 class="home_title">Work Orders</h2>
+    <div class="btn_container">
+      <button class="add_btn" (click)="openModal()" *ngIf="user != 'forman'">
+        Add work order
+      </button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr class="table_head_col">
+          <th>ID</th>
+          <th>Creation date</th>
+          <th>Operation description</th>
+          <th>Start date</th>
+          <th>End date</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="(workOrder$ | async)?.length">
+        <tr *ngFor="let item of workOrder$ | async; let i = index"(click)="edit(item)">
+          <td>{{ item.headers.orderid }}</td>
+          <td>{{ item.headers.creationdate }}</td>
+          <td>{{ item.headers.operationDesc }}</td>
+          <td>{{ item.headers.startDate }}</td>
+          <td>{{ item.headers.endDate }}</td>
+          <td>
+            <input class="progress_input"type="number" [value]="item.headers.progress|number"disabled  />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-modal *ngIf="modalStatus" (closeModal)="closeModal()" [modalData]="modal"></app-modal>

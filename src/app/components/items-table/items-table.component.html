@@ -1,0 +1,26 @@
+<div class="work_orders">
+  <div class="container">
+    <p class="order_title">Work Order Items</p>
+    <div class="btn_container"></div>
+    <table class="table">
+      <thead>
+        <tr class="table_head_col">
+          <th>Number</th>
+          <th>Description</th>
+          <th>Location</th>
+          <th>Progress</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableContent; let i = index"(click)="edit(i)" >
+          <td>{{ i +1 }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.location }}</td>
+          <td>{{ item.progress }}</td>
+          <td  *ngIf="user !== 'forman'"><button class="btn" (click)="deleteItem(i)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

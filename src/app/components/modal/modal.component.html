@@ -1,0 +1,104 @@
+<!-- Form to add new work order  -->
+<div class="modal_container">
+  <mat-icon
+    class="close_icon"
+    aria-hidden="false"
+    aria-label="close icon"
+    (click)="close()"
+  >
+    close
+  </mat-icon>
+  <form action="" class="add_work_form" #workOrderForm="ngForm">
+    <h3 class="modal_title">Add Work Order</h3>
+    <div class="form_inputs">
+      <div class="input">
+        <label>Order Id</label>
+        <input
+          type="text"
+          placeholder="Order Id"
+          name="orderid"
+          #orderIdModal="ngModel"
+          [(ngModel)]="modal.orderid"
+          disabled
+        />
+      </div>
+      <div class="input">
+        <label>Createion date</label>
+        <input
+          type="date"
+          name="creationdate"
+          #creationdateModal="ngModel"
+          [(ngModel)]="modal.creationdate"
+          [disabled]="user === 'forman'"
+        />
+      </div>
+      <div class="input">
+        <label>Start date</label>
+        <input
+          type="date"
+          name="startDate"
+          #startDateModal="ngModel"
+          [(ngModel)]="modal.startDate"
+          [disabled]="user === 'forman'"
+        />
+      </div>
+      <div class="input">
+        <label>End date</label>
+        <input
+          type="date"
+          name="endDate"
+          #enddateModal="ngModel"
+          [(ngModel)]="modal.endDate"
+          [disabled]="user === 'forman'"
+        />
+      </div>
+    </div>
+    <div class="input">
+      <label>Progress</label>
+      <input
+        type="number"
+        name="progress"
+        value="0"
+        #progressModal="ngModel"
+        [(ngModel)]="modal.progress"
+      />
+    </div>
+    <div class="input input_desc">
+      <label>Operation description</label>
+      <textarea
+        placeholder="Operation description"
+        name="operationDesc"
+        #operationDescModal="ngModel"
+        [(ngModel)]="modal.operationDesc"
+        [disabled]="user === 'forman'"
+      ></textarea>
+      <p class="error" *ngIf="showErrorMsg">You should fill out all inputs</p>
+    </div>
+    <button class="btn btn_add" (click)="openModalDetails()" *ngIf="user!=='forman'">
+      Add Item to work
+    </button>
+    <app-modal-detail
+      *ngIf="modalDetails"
+      (closeDetailModal)="closeModalDetils()"
+      (getItem)="saveItem($event)"
+      [modalData]="item"
+
+    ></app-modal-detail>
+    <app-items-table
+      *ngIf="items.length"
+      [tableContent]="items"
+      (deletedItem)="deleteItem($event)"
+      (editedItem)="editItem($event)"
+    ></app-items-table>
+    <div class="btns">
+      <button class="btn btn_cancel" (click)="close()">Cancel</button>
+      <button
+        class="btn btn_save"
+        (click)="addWorkOrder()"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>

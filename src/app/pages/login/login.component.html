@@ -1,0 +1,48 @@
+<div class="login_container">
+<form [formGroup]="loginForm" class="login_form" name="loginform">
+  <h3 class="login_title">Login</h3>
+  <label class="label">Name </label>
+  <input
+    type="text"
+    placeholder="Enter your Name"
+    class="login_input"
+    formControlName="name"
+    required
+  />
+  <div *ngIf="formControlers['name'].touched && formControlers['name'].invalid">
+    <p class="error_msg">
+      Name is required.
+    </p>
+  </div>
+  <label class="label">Password </label>
+  <input
+    type="password"
+    placeholder="Enter your password"
+    class="login_input"
+    formControlName="password"
+    required
+  />
+  <div
+    *ngIf="
+      formControlers['password'].touched && formControlers['password'].invalid
+    "
+  >
+    <p class="error_msg">
+      Password is required.
+    </p>
+  </div>
+  <button class="login_btn" (click)="login()">
+    Login
+  </button>
+  <div
+  *ngIf="invalidForm"
+>
+  <p class="error_msg">
+    You should fill all inputs.
+  </p>
+</div>
+<p class="hint">if you are Forman name: forman,password: forman</p>
+
+</form>
+</div>
+
