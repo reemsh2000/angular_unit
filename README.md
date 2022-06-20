@@ -1,27 +1,32 @@
-# Construction
+# Constructions Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+## Live demo   [link]()
 
-## Development server
+## User Story 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+> User
+* As a user, you can login by any name or password. 
+* As a user, you can add new work order.
+* As a user, you can add items for work order.
+* As a user, you can edit exist work order.
+* As a user, you can edit exist work order item.
+* As a user, you can delete work order item.
 
-## Code scaffolding
+> Forman
+* As a user, you can login by any name: forman ond password:forman. 
+* As a user, you can check work orders.
+* As a user, you can update progress fot  work order.
+* As a user, you can update progress fot items work order.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+------
+## Technologies 
+**FrontEnd**: Angular,typescript,html,css matrial ui for icons.
+-----------
+## How to Launch App Locally
+ * clone this repo by typing this command in the terminal:
+ ```https://github.com/reemsh2000/angular_unit.git```
+* Run `npm i` to install the packages for the app .
+* Run `ng serve -o` to open the app on localhost .
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+By:
+* [Reem Shamia](https://github.com/reemsh2000)
