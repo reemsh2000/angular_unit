@@ -19,8 +19,13 @@
 * As a user, you can update progress fot items work order.
 
 ------
-## Technologies 
-**FrontEnd**: Angular,typescript,html,css matrial ui for icons.
+## Technologies:
+FrontEnd:
+* Angular.
+* Typescript.
+* Html.
+* Css 
+* Matrial ui for icons.
 -----------
 ## How to Launch App Locally
  * clone this repo by typing this command in the terminal:
